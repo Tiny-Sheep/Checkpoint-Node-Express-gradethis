@@ -18,8 +18,16 @@ router.get("/users/:name/tasks", (req,res,next)=>{
     try{ 
         if (!listPeople().includes(req.params.name)){throw 404}
         
+        // check the req.queries object if empty 
+        // if(Object.key(req.queries).length < 1){res.json(list(req.params.name))}
+        // if empty do this:
         res.json(list(req.params.name))
+        //else do this filter 
+        // i dont know if this is the correct syntax but im filtering for completed tasks and assigning to the empty
+        // req.body object
+        // req.body = {...list(req.params.name).filter(object=> object[req.query.status] === true])}
         
+        //1. check if 
         
         
      
